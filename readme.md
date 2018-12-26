@@ -38,3 +38,17 @@ then output the processed video
 		* distort coefficient ```K```
 		* put the value of K you desire into
 ```float K = "your value";```
+
+# How to Compile and Run this Work
+* for 0percent
+```
+$ cmake .
+$ make
+$ ./0percent
+```
+* for LD
+```
+$ cmake .
+$ make
+$ ./LD
+```
