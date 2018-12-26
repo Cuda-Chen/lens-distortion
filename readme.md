@@ -1,47 +1,71 @@
-compile information of 0percent.cpp and LD.cpp:
-language: C++
-IDE: code::block 12.11
-compiler: gcc ver. 4.7.1 (tdm-1) with MinGW
-openCV ver.: 2.4.13
-problem you may encounter: cannot search file using absolute path(both programs)
+# Develop Environment of this work
+* language: C++
+* IDE: code::block 12.11
+* compiler: gcc ver. 4.7.1 (tdm-1) with MinGW
+* openCV ver.: 2.4.13
 
-0percent.cpp:
+# problem you may encounter
+* cannot search file using absolute path(both programs)
 
-	description:
-	這個程式是我用來把兩個影片合成一個影片的program
+# Description of this work
+* this work consists of two parts: 0percent and LD
+* 0percent.cpp:
+	* description:
+		* put two videos side-by-side horizontally
+then output one video
 
-	how to run this program:
-	單獨編譯0percent.cpp即可
+	* how to compile and run this program:
+```
+$ cmake .
+$ make
+$ ./0percent
+```
 
-	input 1:
-	put the file represented left eye video into
-	VideoCapture cap1("FILENAME"); (line 37)
+	* input 1:
+		* put the file represented left eye video into
+```cpp=37
+VideoCapture cap1("FILENAME"); 
+```
 
-	input 2:
-	put the file represented right eye video into
-	VideoCapture cap2("FILENAME"); (line 38)
+	* input 2:
+		* put the file represented right eye video into
+```cpp=38
+VideoCapture cap2("FILENAME");
+```
 	
-	output:
-	put the output file name you prefer into
-	VideoWriter out("FILENAME", CV_FOURCC('m', 'p', '4', 'v'), FPS, Size(width, height)); (line 86)
+	* output:
+		* put the output file name you prefer into
+```cpp=86
+VideoWriter out("FILENAME", CV_FOURCC('m', 'p', '4', 'v'), FPS, Size(width, height));
+```
 
-LD.cpp:
-	description:
-	這個程式是我用來對一個影片進行barrel distortion之後再輸出成一個.avi file的program
+* LD.cpp:
+	* description:
+		* apply barrel distortion to input video with certain coefficient
+then output the processed video
 	
-	how to run this program:
-	單獨編譯LD.cpp即可
+	* how to run this program:
+```
+$ cmake .
+$ make
+$ ./LD
 
-	input:
-	put the file you want to distort into
-	cv::VideoCapture cap("FILENNAME"); (line 94)
+	* input:
+		* put the file you want to distort into
+```cpp=94
+cv::VideoCapture cap("FILENNAME"); 
+```
 
-	output:
-	put the output file name you prefer into
-	cv:VideoWriter output("FILENAME", CV_FOURCC('m', 'p', '4', 'v'), FPS, cv:Size(width, height)); (line 109)
-	I recommend the file name plus "distort" and "N"(N for the value of K) with (ex. FILENAME_distort_N)
+	* output:
+		* put the output file name you prefer into
+```cpp=109
+cv:VideoWriter output("FILENAME", CV_FOURCC('m', 'p', '4', 'v'), FPS, cv:Size(width, height));
+```
+	* I recommend the file name plus "distort" and "N"(N for the value of K) with (e.g. FILENAME_distort_N)
 
-	parameter:
-	distort coefficient K
-	put the value of K you desire into
-	float K = "your value"; (line 38)
+	* parameter:
+		* distort coefficient ```K```
+		* put the value of K you desire into
+```cpp=38
+float K = "your value";
+```
