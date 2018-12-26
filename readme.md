@@ -21,17 +21,20 @@ $ make
 $ ./0percent
 ```
 
+
 	* input 1:
 		* put the file represented left eye video into
 ```cpp=37
 VideoCapture cap1("FILENAME"); 
 ```
 
+
 	* input 2:
 		* put the file represented right eye video into
 ```cpp=38
 VideoCapture cap2("FILENAME");
 ```
+
 	
 	* output:
 		* put the output file name you prefer into
@@ -49,12 +52,15 @@ then output the processed video
 $ cmake .
 $ make
 $ ./LD
+```
+
 
 	* input:
 		* put the file you want to distort into
 ```cpp=94
 cv::VideoCapture cap("FILENNAME"); 
 ```
+
 
 	* output:
 		* put the output file name you prefer into
