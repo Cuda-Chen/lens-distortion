@@ -5,7 +5,7 @@
 * openCV ver.: 2.4.13
 
 # problem you may encounter
-* cannot search file using absolute path(both programs)
+* cannot search file using absolute path (both programs)
 
 # Description of this work
 * this work consists of two parts: 0percent and LD
@@ -52,3 +52,7 @@ $ cmake .
 $ make
 $ ./LD
 ```
+
+# Reference
+The work of barrel distortion is originated from 逍遙文工作室.
+You can find his work in this link: https://cg2010studio.com/2012/01/03/opencv-%E6%A8%A1%E6%93%AC%E9%AD%9A%E7%9C%BC%E9%8F%A1%E9%A0%AD-simulate-fisheye-lens/
